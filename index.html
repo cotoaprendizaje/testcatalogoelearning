@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Cursos E-learning — COTO CICSA</title>
+  <meta name="description" content="Catálogo de cursos e-learning de COTO CICSA — Edición 2026">
+  <meta name="author" content="COTO CICSA — Dirección de Recursos Humanos">
+
+  <!-- Open Graph (preview al compartir por mail, WhatsApp, Slack, etc.) -->
+  <meta property="og:title"       content="Catálogo e-learning — COTO CICSA">
+  <meta property="og:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://cotoaprendizaje.github.io/catalogoelearning/img/logo-coto.png">
+  <meta property="og:image:alt"   content="Logo de COTO CICSA">
+  <meta property="og:locale"      content="es_AR">
+  <meta property="og:site_name"   content="COTO CICSA — Aprendizaje">
+  <meta property="og:url" content="https://cotoaprendizaje.github.io/catalogoelearning/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Catálogo e-learning — COTO CICSA">
+  <meta name="twitter:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
+  <meta name="twitter:image"       content="https://cotoaprendizaje.github.io/catalogoelearning/img/logo-coto.png">
+
+  <meta name="theme-color"        content="#162036">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23162036'/><text y='23' x='16' text-anchor='middle' font-size='18' font-family='Arial' font-weight='bold' fill='white'>e</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Skip link para accesibilidad (visible al recibir foco con Tab) -->
+<a href="#hero" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Barra de progreso de scroll -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Botones flotantes (abajo a la derecha) -->
+<div class="fab-stack">
+  <button class="fab fab-dark"
+          id="darkFab"
+          aria-label="Cambiar modo oscuro"
+          aria-pressed="false"
+          title="Cambiar modo claro/oscuro">
+    <span id="darkFabIcon" aria-hidden="true">☀️</span>
+  </button>
+  <button class="fab back-top" id="backTop" aria-label="Volver al inicio">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M7 11V3M3 7l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     NAVBAR SUPERIOR
+═══════════════════════════════════ -->
+<header class="topnav" role="banner">
+  <div class="topnav-inner">
+
+    <div class="topnav-left">
+      <a href="#hero" class="logo-coto" title="Ir al inicio" aria-label="COTO — ir al inicio">
+        <img src="img/logo-coto.png" alt="COTO CICSA" width="auto" height="44">
+      </a>
+      <div class="topnav-divider" aria-hidden="true"></div>
+      <a href="#hero" class="logo-rrhh" title="Ir al inicio" aria-label="Recursos Humanos — ir al inicio">
+        <img src="img/logo-rrhh.png" alt="Dirección de Recursos Humanos — Aprendizaje" width="auto" height="52">
+      </a>
+    </div>
+
+    <nav class="topnav-menu" aria-label="Menú principal" id="topnavMenu">
+      <a href="#hero" class="active">Inicio</a>
+      <a href="#indice">📋 Índice</a>
+      <a href="#cajas">Cursos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="topnav-right">
+      <div class="topnav-search-wrap" role="search">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <label for="navSearch" class="sr-only">Buscar curso</label>
+        <input type="search"
+               id="navSearch"
+               placeholder="Buscar curso…"
+               autocomplete="off"
+               aria-label="Buscar curso en el catálogo">
+      </div>
+
+      <!-- Botón hamburguesa (siempre visible) -->
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Menú mobile desplegable -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <div class="mobile-search-row">
+      <div class="mobile-search-wrap" role="search">
+        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <label for="mobileSearch" class="sr-only">Buscar curso</label>
+        <input type="search"
+               id="mobileSearch"
+               placeholder="Buscar curso…"
+               autocomplete="off"
+               aria-label="Buscar curso en el catálogo">
+      </div>
+      <button class="mobile-dark-toggle"
+              id="mobileDarkToggle"
+              aria-label="Cambiar modo oscuro"
+              title="Cambiar modo oscuro">
+        <span id="mobileDarkIcon" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav" aria-label="Menú principal (mobile)">
+      <a href="#hero">🏠 Inicio</a>
+      <a href="#indice">📋 Índice</a>
+      <a href="#cajas">📚 Cursos</a>
+      <a href="#contacto">✉️ Contacto</a>
+      <a href="catalogo.pdf" download>📥 Descargar PDF</a>
+    </nav>
+  </div>
+</div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <div class="hero-tag" aria-hidden="true">Aprendizaje</div>
+      <h1 class="hero-h1" id="hero-title">
+        <span class="hero-h1-light">Catálogo de cursos</span>
+        <span class="hero-h1-bold">e-learning</span>
+      </h1>
+      <p class="hero-sub">
+        Te damos la bienvenida a nuestro espacio de aprendizaje,
+        donde encontrarás todo lo necesario para capacitarte
+        y seguir creciendo junto a tu equipo.
+      </p>
+      <div class="hero-ctas">
+        <a href="#indice" class="hero-cta">
+          Explorar catálogo <span class="hero-cta-arrow" aria-hidden="true">↓</span>
+        </a>
+        <a href="catalogo.pdf" download class="hero-cta hero-cta-pdf">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M6.5 1v8M3 6l3.5 3.5L10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 11h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Descargar PDF
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats-panel" aria-label="Estadísticas del catálogo">
+      <div class="hero-stat-card" style="--accent: linear-gradient(to right, #F02850, #097bb3);">
+        <strong class="stat-counter" data-count-source="cursos">0</strong>
+        <span>cursos</span>
+        <p>Disponibles en la plataforma</p>
+      </div>
+      <div class="hero-stat-card" style="--accent: linear-gradient(to right, #8228C8, #1E78DC);">
+        <strong class="stat-counter" data-count-source="categorias">0</strong>
+        <span>categorías</span>
+        <p>Áreas de formación</p>
+      </div>
+      <div class="hero-stat-card" style="--accent: linear-gradient(to right, #00C88C, #1EAADC);">
+        <strong class="stat-counter" data-count="19800" data-prefix="+" data-separator=".">0</strong>
+        <span>usuarios</span>
+        <p>Colaboradores en la plataforma</p>
+      </div>
+      <div class="hero-stat-card" style="--accent: linear-gradient(to right, #F0A032, #F0BE00);">
+        <strong class="stat-counter" data-count="2026">0</strong>
+        <span>edición</span>
+        <p>Actualizado este año</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     CATNAV — barra de categorías
+     (se rellena dinámicamente desde app.js)
+═══════════════════════════════════ -->
+<nav class="catnav" aria-label="Navegación por categorías">
+  <button id="catnav-left"  class="catnav-arrow catnav-arrow-left  hidden" aria-label="Ver categorías anteriores">&#8249;</button>
+  <div id="catnav-scroll" role="list" aria-label="Categorías de cursos">
+    <!-- Render dinámico -->
+  </div>
+  <button id="catnav-right" class="catnav-arrow catnav-arrow-right" aria-label="Ver más categorías">&#8250;</button>
+</nav>
+
+
+<!-- ═══════════════════════════════════
+     ÍNDICE DE CURSOS (render dinámico)
+═══════════════════════════════════ -->
+<section class="index-section" id="indice" aria-labelledby="indice-title">
+  <div class="page-wrap">
+    <div class="index-heading">
+      <h2 id="indice-title">Índice de cursos</h2>
+      <div class="index-heading-line" aria-hidden="true"></div>
+      <div class="year-filter">
+        <label for="yearFilter" class="year-filter-label">Año</label>
+        <select id="yearFilter" class="year-filter-select" aria-label="Filtrar cursos por año">
+          <option value="">Todos</option>
+          <!-- Render dinámico -->
+        </select>
+      </div>
+    </div>
+    <div class="index-grid" id="indexGrid">
+      <!-- Render dinámico -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     CURSOS POR CATEGORÍA (render dinámico)
+═══════════════════════════════════ -->
+<div class="courses-section">
+  <div class="page-wrap">
+
+    <!-- Mensaje sin resultados -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <div class="no-results-text"><strong>Sin resultados</strong></div>
+      <div class="no-results-sub">Probá con otra palabra clave o revisá el índice.</div>
+    </div>
+
+    <div id="coursesContainer">
+      <!-- Render dinámico de categorías y cards -->
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     CONTACTO
+═══════════════════════════════════ -->
+<section class="contact-section" id="contacto" aria-labelledby="contacto-title">
+  <div class="contact-inner">
+
+    <div class="contact-text">
+      <h2 id="contacto-title">¿Tenés alguna<br><em>consulta</em> sobre tu formación?</h2>
+      <p>Si necesitás acceso a algún curso, tenés dudas sobre la plataforma o querés proponer un nuevo contenido, contactate con el equipo de Aprendizaje de RRHH.</p>
+      <div class="contact-pills">
+        <a href="mailto:aprendizaje@coto.com.ar" class="contact-pill primary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Escribinos por mail
+        </a>
+        <a href="https://wa.me/5491170819432?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20formaci%C3%B3n%20en%20COTO."
+           class="contact-pill"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="background:#25D366;color:#fff;border:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 00.925.926l5.35-1.47A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-4.953-1.355l-.355-.21-3.676 1.01 1.012-3.589-.229-.368A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#indice" class="contact-pill secondary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M7 4.5v3l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Ver catálogo
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card" aria-label="Datos de contacto del equipo de Aprendizaje">
+      <div class="contact-card-body">
+        <div class="contact-card-label">Equipo de Aprendizaje</div>
+        <h3>Dirección de Recursos Humanos</h3>
+        <p>Estamos para acompañarte en tu desarrollo dentro de COTO CICSA.</p>
+        <div class="contact-info-row">
+          <div class="contact-info-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            aprendizaje@coto.com.ar
+          </div>
+          <div class="contact-info-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 1.5C4.8 1.5 3 3.3 3 5.5c0 3 4 7 4 7s4-4 4-7c0-2.2-1.8-4-4-4z" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="7" cy="5.5" r="1.2" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            Buenos Aires, Argentina
+          </div>
+          <div class="contact-info-item">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7 4v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            Lunes a viernes · 7 a 17 h
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     MODAL DE DETALLE
+═══════════════════════════════════ -->
+<div class="modal-overlay"
+     id="courseModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalTitle"
+     aria-hidden="true">
+  <div class="modal" id="modalBox">
+    <div class="modal-cover">
+      <img id="modalImg" src="" alt="" loading="lazy">
+      <div class="modal-cover-overlay" aria-hidden="true"></div>
+      <div class="modal-cover-cat" id="modalCat" aria-hidden="true"></div>
+      <button class="modal-close" id="modalClose" aria-label="Cerrar detalle del curso">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-bajada" id="modalBajada"></p>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-personas" id="modalPersonas"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn-secondary" id="modalCloseBtn">
+          Volver al catálogo
+        </button>
+        <a class="modal-btn modal-btn-wa" id="modalWaBtn" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 00.925.926l5.35-1.47A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-4.953-1.355l-.355-.21-3.676 1.01 1.012-3.589-.229-.368A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          <span>Consultar al equipo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logos">
+      <img src="img/logo-coto.png" alt="COTO CICSA" height="26">
+      <img src="img/logo-rrhh.png" alt="RRHH Aprendizaje"  height="26">
+    </div>
+    <div class="footer-text">
+      <p><strong>COTO CICSA</strong> — Dirección de Recursos Humanos · Aprendizaje</p>
+      <p style="margin-top:4px; font-size:12px;">Catálogo e-learning · Edición 2026</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Clase utilitaria para screen readers -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<script src="app.js" defer></script>
+<script>
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
