@@ -700,68 +700,11 @@ body {
   border-radius: 2px;
 }
 
-/* Filtro por año */
-.year-filter {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-.year-filter-label {
-  font-size: 11px; font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--gray);
-  white-space: nowrap;
-}
-.year-filter-select {
-  font: inherit;
-  font-size: 13px; font-weight: 600;
-  color: var(--navy);
-  background-color: #fff;
-  border: 1.5px solid var(--gray-light);
-  border-radius: 20px;
-  padding: 7px 32px 7px 14px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231f2d46' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.year-filter-select:hover { border-color: var(--gray); }
-.year-filter-select:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
-/* Estado activo: hay un año seleccionado */
-.year-filter-select.is-active {
-  border-color: var(--blue-light);
-  color: var(--blue-dark);
-  box-shadow: 0 0 0 3px rgba(9,123,179,0.12);
-}
-
-@media (max-width: 600px) {
-  .index-heading { flex-wrap: wrap; }
-  .index-heading-line { order: 3; flex-basis: 100%; }
-}
-
-[data-theme="dark"] .year-filter-select {
-  background-color: #16233a;
-  color: #e2e8f5;
-  border-color: #2a3a55;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23c8d6f0' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-[data-theme="dark"] .year-filter-select.is-active {
-  border-color: var(--blue-light);
-  color: #9fd0ee;
-}
-
 .index-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-.index-card.hidden { display: none; }
-.index-card li.hidden { display: none; }
 
 .index-card {
   background: #fff;
@@ -910,30 +853,27 @@ body {
   opacity: 0.75;
 }
 
-/* Badge circular de categoría (emoji) sobre imagen */
-.course-cat-badge {
+/* Chip de categoría sobre imagen */
+.course-cat-chip {
   position: absolute;
-  right: 12px; bottom: 12px;
-  width: 46px; height: 46px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 21px; line-height: 1;
-  background: rgba(255,255,255,0.28);
-  border: 1px solid rgba(255,255,255,0.45);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  top: 10px; left: 10px;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 10px; font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  display: flex; align-items: center; gap: 5px;
   z-index: 2;
-  transition: transform 0.25s;
 }
-.course-card:hover .course-cat-badge { transform: scale(1.08); }
 
-/* Soporte backdrop-filter en el badge */
+/* Soporte backdrop-filter en chips */
 @supports (backdrop-filter: blur(8px)) {
-  .course-cat-badge { backdrop-filter: blur(10px); }
+  .course-cat-chip { backdrop-filter: blur(8px); }
 }
 
-/* Punto de color de categoría (usado en el encabezado del modal) */
 .course-cat-chip-dot {
-  display: inline-block;
   width: 6px; height: 6px;
   border-radius: 50%;
   flex-shrink: 0;
@@ -987,24 +927,27 @@ body {
   margin-bottom: 0.9rem;
 }
 .meta-tag {
-  font-size: 12px; font-weight: 600;
-  padding: 4px 12px;
+  font-size: 12px; font-weight: 500;
+  padding: 4px 11px;
   border-radius: 20px;
   display: inline-flex; align-items: center; gap: 5px;
-  /* Fallback para navegadores sin color-mix */
-  background: rgba(0,0,0,0.05);
-  color: var(--navy);
-  /* Tinte con el color de la categoría (o del curso en el modal) */
-  background: color-mix(in srgb, var(--cat-main, var(--modal-color, #7a8aa8)) 13%, transparent);
-  color: color-mix(in srgb, var(--cat-main, var(--modal-color, #5a6a88)) 72%, var(--navy));
 }
 .meta-tag.anio {
+  background: rgba(0,0,0,0.04);
+  color: var(--navy);
+  border: 1px solid rgba(0,0,0,0.08);
   font-variant-numeric: tabular-nums;
 }
-.meta-tag-icon {
-  font-size: 11px;
-  line-height: 1;
+.meta-tag-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.55;
 }
+.dur-corto { background: #e8f5e9; color: #2e7d32; }
+.dur-medio { background: #e3f2fd; color: #1565c0; }
+.dur-largo { background: #fff3e0; color: #e65100; }
 
 /* Sección extra siempre visible */
 .course-card-extra {
@@ -1435,12 +1378,7 @@ footer {
 [data-theme="dark"] #catnav-scroll a:hover  { background: #1a2a42; }
 [data-theme="dark"] #catnav-scroll a.active { background: #e2e8f5; color: #0d1520; border-color: #e2e8f5; }
 
-[data-theme="dark"] .meta-tag {
-  background: rgba(255,255,255,0.08);
-  color: #c8d6f0;
-  background: color-mix(in srgb, var(--cat-main, var(--modal-color, #8aa0c8)) 24%, transparent);
-  color: color-mix(in srgb, var(--cat-main, var(--modal-color, #cdd9f0)) 30%, #ffffff);
-}
+[data-theme="dark"] .meta-tag.anio   { background: rgba(255,255,255,0.08); color: #c8d6f0; }
 
 [data-theme="dark"] .search-highlight { background: #f0b429; color: #0d1520; }
 
